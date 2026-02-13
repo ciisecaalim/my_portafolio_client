@@ -38,7 +38,7 @@ const Projects = () => {
 
     useEffect(() => {
         axios
-            .get('http://localhost:5000/api/projects')
+            .get('https://my-portafolio-server-1.onrender.com/api/projects')
             .then((res) => setProjects(res.data))
             .catch(() => {
                 // If the API is not available, fall back to static projects
