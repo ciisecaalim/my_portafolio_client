@@ -40,7 +40,7 @@ const Dashboard = () => {
 
     const fetchProjects = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/projects');
+            const res = await axios.get('https://my-portafolio-server-1.onrender.com/api/projects');
             setProjects(res.data);
             setStats(prev => ({ ...prev, totalProjects: res.data.length }));
         } catch (err) { console.error(err); }
@@ -48,7 +48,7 @@ const Dashboard = () => {
 
     const fetchMessages = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/contact');
+            const res = await axios.get('https://my-portafolio-server-1.onrender.com/api/contact');
             setMessages(res.data);
             setStats(prev => ({ ...prev, totalMessages: res.data.length }));
         } catch (err) {
@@ -70,7 +70,7 @@ const Dashboard = () => {
         Object.keys(newProject).forEach(key => formData.append(key, newProject[key]));
 
         try {
-            await axios.post('http://localhost:5000/api/projects', formData, {
+            await axios.post('https://my-portafolio-server-1.onrender.com/api/projects', formData, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
             fetchProjects();
@@ -82,7 +82,7 @@ const Dashboard = () => {
     const deleteProject = async (id) => {
         if (!window.confirm('Are you sure?')) return;
         try {
-            await axios.delete(`http://localhost:5000/api/projects/${id}`);
+            await axios.delete(`https://my-portafolio-server-1.onrender.com/api/projects/${id}`);
             fetchProjects();
         } catch (err) { console.error(err); }
     };
