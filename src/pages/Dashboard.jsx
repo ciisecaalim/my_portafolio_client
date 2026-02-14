@@ -171,7 +171,7 @@ const Dashboard = () => {
                                     {projects.map(proj => (
                                         <div key={proj._id} className='flex justify-between items-start bg-white/5 p-5 rounded-xl border border-white/10 hover:bg-white/10 transition'>
                                             <div className="flex gap-4">
-                                                {proj.image && <img src={`http://localhost:5000/${proj.image}`} alt={proj.title} className="w-24 h-24 object-cover rounded-lg shadow-sm" />}
+                                                {proj.image && <img src={`https://my-portafolio-server-1.onrender.com/${proj.image}`} alt={proj.title} className="w-24 h-24 object-cover rounded-lg shadow-sm" />}
                                                 <div>
                                                     <h3 className='font-bold text-lg text-gray-200'>{proj.title}</h3>
                                                     <p className='text-sm text-gray-400 mt-1 mb-2'>{proj.description}</p>

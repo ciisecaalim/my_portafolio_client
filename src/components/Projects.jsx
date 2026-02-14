@@ -10,8 +10,8 @@ const fallbackProjects = [
         description: 'Modern single‑page portfolio built with React, Tailwind CSS and smooth scroll animations.',
         technologies: ['React', 'Tailwind', 'Framer Motion'],
         imageUrl: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg',
-        link: '#',
-        githubLink: '#',
+        link: 'https://www.linkedin.com/in/ciise-caalim-29ba8536a/',
+        githubLink: 'https://github.com/ciisecaalim',
     },
     {
         id: 2,
@@ -19,8 +19,8 @@ const fallbackProjects = [
         description: 'Responsive admin dashboard for managing projects, messages and analytics.',
         technologies: ['React', 'Node.js', 'MongoDB'],
         imageUrl: 'https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg',
-        link: '#',
-        githubLink: '#',
+        link: 'https://www.linkedin.com/in/ciise-caalim-29ba8536a/',
+        githubLink: 'https://github.com/ciisecaalim',
     },
     {
         id: 3,
@@ -28,8 +28,8 @@ const fallbackProjects = [
         description: 'Secure REST API for products, orders and users, built with Express.js.',
         technologies: ['Node.js', 'Express.js', 'MongoDB'],
         imageUrl: 'https://images.pexels.com/photos/5720566/pexels-photo-5720566.jpeg',
-        link: '#',
-        githubLink: '#',
+        link: 'https://www.linkedin.com/in/ciise-caalim-29ba8536a/',
+        githubLink: 'https://github.com/ciisecaalim',
     },
 ];
 

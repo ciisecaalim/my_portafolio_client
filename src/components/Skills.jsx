@@ -7,6 +7,14 @@ const skills = [
     { id: 3, name: 'Node.js & Express.js', level: 88 },
     { id: 4, name: 'MongoDB & MySQL', level: 85 },
     { id: 5, name: 'Networking & DevOps basics', level: 80 },
+    { id: 6, name: 'Python', level: 90 },
+    { id: 7, name: 'Java', level: 85 },
+    { id: 8, name: 'C#', level: 96 },
+    { id: 9, name: 'Data Structures using Java', level: 72 },
+    { id: 10, name: 'Adobe Photoshop', level: 84 },
+    { id: 11, name: 'Adobe Illustrator', level: 80 },
+    { id: 12, name: 'CapCut', level: 75 },
+    { id: 13, name: 'Adobe Premiere Pro', level: 72 },
 ];
 
 const Skills = () => {
