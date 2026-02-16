@@ -11,10 +11,11 @@ const Navbar = () => {
         { id: 1, link: 'home', label: 'home' },
         { id: 2, link: 'about', label: 'about' },
         { id: 3, link: 'skills', label: 'skills' },
-        { id: 4, link: 'experience', label: 'experience' },
-        { id: 5, link: 'certificates', label: 'certificates' },
-        { id: 6, link: 'projects', label: 'projects' },
-        { id: 7, link: 'contact', label: 'contact' },
+        { id: 4, link: 'achievements', label: 'Achievements' },
+        { id: 5, link: 'experience', label: 'experience' },
+        { id: 6, link: 'certificates', label: 'certificates' },
+        { id: 7, link: 'projects', label: 'projects' },
+        { id: 8, link: 'contact', label: 'contact' },
     ];
 
     return (
