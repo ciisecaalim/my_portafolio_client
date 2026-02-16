@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import Resume from './pages/Resume';
 import AdminDashboard from './pages/AdminDashboard';
 import { AuthProvider, AuthContext } from './context/AuthContext';
+import DashboardProfile from './components/dashboard/DashboardProfile';
 
 const PrivateRoute = ({ children }) => {
   const auth = React.useContext(AuthContext);
@@ -33,7 +34,9 @@ function App() {
             element={
               <PrivateRoute>
                 <Dashboard />
+                <DashboardProfile />
               </PrivateRoute>
+              
             }
           />
           <Route path="/admin" element={<AdminDashboard />} />

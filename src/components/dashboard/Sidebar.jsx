@@ -7,6 +7,7 @@ const items = [
   { key: 'messages', icon: <FaEnvelope />, label: 'Messages' },
   { key: 'profile', icon: <FaUser />, label: 'Profile' },
   { key: 'skills', icon: <FaTools />, label: 'Skills' },
+  { key: 'DashboardProfile', icon: <FaTools />, label: 'DashboardProfile' },
   { key: 'backend', icon: <FaChartLine />, label: 'Backend & APIs' },
   { key: 'databases', icon: <FaDatabase />, label: 'Databases' },
   { key: 'network', icon: <FaNetworkWired />, label: 'Network Settings' },
