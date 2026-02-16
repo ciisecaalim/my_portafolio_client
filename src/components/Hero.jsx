@@ -69,7 +69,7 @@ const Hero = () => {
                             <div className='absolute -inset-3 rounded-3xl bg-linear-to-tr from-yellow-300 via-purple-500 to-cyan-400 opacity-90 blur-[2px]'></div>
                             <div className='relative w-full h-full rounded-3xl overflow-hidden glass-card border border-yellow-300/40'>
                                 <img
-                                    src="https://api.dicebear.com/9.x/avataaars/svg?seed=CiiseCaalim"
+                                    src="/img/img.jpeg"
                                     alt="Profile"
                                     className='w-full h-full object-cover opacity-90 hover:scale-110 transition duration-700'
                                 />
