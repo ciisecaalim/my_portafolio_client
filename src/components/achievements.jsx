@@ -5,27 +5,42 @@ const achievements = [
   {
   image: "/img/dash1.jpg",
   date: "Apr 8, 2025",
-  duration: "6 min read",
+  duration: "Dashboard",
   title: "School Management System",
 },
 {
+  image: "/img/mc.jpeg",
+  date: "Mar 15, 2025",
+  duration: "Cameraman",
+  title: "Event Coverage / Video Recording",
+},
+
+{
   image: "/img/dash2.jpg",
   date: "Mar 15, 2025",
-  duration: "5 min read",
+  duration: "Dashboard",
   title: "E-Book Store Platform",
 },
 {
   image: "/img/image.png",
   date: "Aug 15, 2025",
-  duration: "5 min read",
-  title: "How Can Designers Prepare for the Future?",
+  duration: "Certificate",
+  title: "Certified in Python – PyCon Conference 2025",
+
 },
 {
   image: "/img/freport.png",
   date: "Feb 28, 2025",
-  duration: "7 min read",
+  duration: "Dashboard",
   title: "Pharmacy Management System",
 },
+{
+  image: "/img/me.jpg",
+  date: "Feb 28, 2025",
+  duration: "Achievement",
+  title: "Awarded at PyCon – Python Certification",
+},
+
 
 ];
 
