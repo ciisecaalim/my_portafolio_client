@@ -2,7 +2,7 @@ import React from 'react';
 import { HiArrowNarrowRight, HiDownload } from 'react-icons/hi';
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaWhatsapp } from 'react-icons/fa';
 
 const Hero = () => {
     return (
@@ -52,9 +52,16 @@ const Hero = () => {
 
                         {/* Social Icons (Inline) */}
                         <div className='flex gap-6 mt-10 text-gray-400'>
-                            <FaGithub className='w-6 h-6 hover:text-white cursor-pointer hover:scale-110 transition' />
-                            <FaLinkedin className='w-6 h-6 hover:text-white cursor-pointer hover:scale-110 transition' />
-                            <FaTwitter className='w-6 h-6 hover:text-white cursor-pointer hover:scale-110 transition' />
+                          <a href="https://github.com/ciisecaalim"> <FaGithub className='w-6 h-6 hover:text-white cursor-pointer hover:scale-110 transition' /></a> 
+                           <a href="https://www.linkedin.com/in/ciise-caalim-29ba8536a/"> <FaLinkedin className='w-6 h-6 hover:text-white cursor-pointer hover:scale-110 transition' /></a>
+                           <a
+  href="https://wa.me/252619810803?text=Asc%20Wll%20IsCo,%20Waxaan%20rabaa%20in%20aan%20kula%20xiriirto%20arrin%20la%20xiriirta%20project."
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <FaWhatsapp className="w-6 h-6 hover:text-green-400 cursor-pointer hover:scale-110 transition" />
+</a>
+
                         </div>
                     </motion.div>
 
