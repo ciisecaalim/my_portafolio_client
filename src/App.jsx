@@ -2,10 +2,15 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
+
 import Resume from './pages/Resume';
-import AdminDashboard from './pages/AdminDashboard';
+// AdminDashboard merged into Dashboard
 import { AuthProvider, AuthContext } from './context/AuthContext';
+import DashboardLayout from './components/dashboard/DashboardLayout';
+import DashboardHome from './pages/dashboard/DashboardHome';
+import Projects from './pages/dashboard/Projects';
+import Messages from './pages/dashboard/Messages';
+import Skills from './pages/dashboard/Skills';
 import DashboardProfile from './components/dashboard/DashboardProfile';
 
 const PrivateRoute = ({ children }) => {
@@ -29,18 +34,13 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/resume" element={<Resume />} />
-          <Route
-            path="/dashboard"
-            element={
-              <PrivateRoute>
-                <Dashboard />
-                <DashboardProfile />
-              </PrivateRoute>
-              
-            }
-          />
-          <Route path="/admin" element={<AdminDashboard />} />
-        </Routes>
+          <Route path="/dashboard" element={<PrivateRoute><DashboardLayout /></PrivateRoute>}>
+            <Route index element={<DashboardHome />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="skills" element={<Skills />} />
+            <Route path="messages" element={<Messages />} />
+            <Route path="profile" element={<DashboardProfile />} />
+          </Route>        </Routes>
       </Router>
     </AuthProvider>
   );

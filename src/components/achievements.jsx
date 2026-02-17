@@ -1,26 +1,32 @@
 import React from "react";
-
+ 
 // Halkan ku beddel sawiradaada iyo xogtaada dhabta ah
 const achievements = [
   {
-    image: "/img/dash1.jpg",
-    date: "Apr 8, 2022",
-    duration: "6 min read",
-    title: "Starting and Growing a Career in Web Design",
-  },
-  {
-    image: "/img/dash2.jpg",
-    date: "Mar 15, 2022",
-    duration: "5 min read",
-    title: "Create a Landing Page That Performs Great",
-  },
-  {
-    image: "/img/freport.png",
-    date: "Feb 28, 2022",
-    duration: "7 min read",
-    title: "How Can Designers Prepare for the Future?",
-  },
-    
+  image: "/img/dash1.jpg",
+  date: "Apr 8, 2025",
+  duration: "6 min read",
+  title: "School Management System",
+},
+{
+  image: "/img/dash2.jpg",
+  date: "Mar 15, 2025",
+  duration: "5 min read",
+  title: "E-Book Store Platform",
+},
+{
+  image: "/img/image.png",
+  date: "Aug 15, 2025",
+  duration: "5 min read",
+  title: "How Can Designers Prepare for the Future?",
+},
+{
+  image: "/img/freport.png",
+  date: "Feb 28, 2025",
+  duration: "7 min read",
+  title: "Pharmacy Management System",
+},
+
 ];
 
 const Achievements = () => {

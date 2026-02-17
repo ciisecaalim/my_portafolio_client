@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import API_URL from '../config';
 
 const fallbackProjects = [
     {
@@ -38,7 +39,7 @@ const Projects = () => {
 
     useEffect(() => {
         axios
-            .get('https://my-portafolio-server-1.onrender.com/api/projects')
+            .get(`${API_URL}/api/projects`)
             .then((res) => setProjects(res.data))
             .catch(() => {
                 // If the API is not available, fall back to static projects
@@ -83,7 +84,7 @@ const Projects = () => {
                     {displayProjects.map((item, index) => {
                         const technologies = item.technologies || item.tags || [];
                         const imageSrc = item.image
-                            ? `http://localhost:5000/${item.image}`
+                            ? `${API_URL}/${item.image}`
                             : item.imageUrl;
 
                         return (

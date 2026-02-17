@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import Swal from 'sweetalert2';
+import API_URL from '../config';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -84,7 +85,7 @@ const Contact = () => {
             setLoading(true);
 
             await axios.post(
-                'https://my-portafolio-server-1.onrender.com/api/contact',
+                `${API_URL}/api/contact`,
                 formData
             );
 
@@ -145,8 +146,8 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     className={`p-4 rounded-lg outline-none transition-all border 
-                        ${errors.name 
-                            ? 'border-red-500 bg-red-500/5' 
+                        ${errors.name
+                            ? 'border-red-500 bg-red-500/5'
                             : 'border-white/5 bg-[#ccd6f6]/5 focus:ring-2 focus:ring-purple-500'}
                         text-gray-200`}
                 />
@@ -162,8 +163,8 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     className={`my-4 p-4 rounded-lg outline-none transition-all border 
-                        ${errors.email 
-                            ? 'border-red-500 bg-red-500/5' 
+                        ${errors.email
+                            ? 'border-red-500 bg-red-500/5'
                             : 'border-white/5 bg-[#ccd6f6]/5 focus:ring-2 focus:ring-purple-500'}
                         text-gray-200`}
                 />
@@ -179,8 +180,8 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     className={`p-4 rounded-lg outline-none transition-all border 
-                        ${errors.message 
-                            ? 'border-red-500 bg-red-500/5' 
+                        ${errors.message
+                            ? 'border-red-500 bg-red-500/5'
                             : 'border-white/5 bg-[#ccd6f6]/5 focus:ring-2 focus:ring-purple-500'}
                         text-gray-200`}
                 ></textarea>
@@ -193,8 +194,8 @@ const Contact = () => {
                     type='submit'
                     disabled={loading}
                     className={`mt-8 px-6 py-3 rounded-md font-bold text-lg transition-all duration-300
-                        ${loading 
-                            ? 'bg-gray-600 cursor-not-allowed' 
+                        ${loading
+                            ? 'bg-gray-600 cursor-not-allowed'
                             : 'bg-purple-600 hover:bg-purple-700 hover:shadow-[0_0_20px_rgba(147,51,234,0.5)]'}
                         text-white`}
                 >
