@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FaTrash, FaEnvelopeOpen } from 'react-icons/fa';
+import { FaTrash, FaEnvelopeOpen, FaReply } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 import API_URL from '../../config';
 
 const Messages = () => {
@@ -30,6 +31,53 @@ const Messages = () => {
         } catch (err) {
             console.error(err);
             alert('Failed to delete message');
+        }
+    };
+
+    const handleReply = async (message) => {
+        const { value: formValues } = await Swal.fire({
+            title: `Reply to ${message.name}`,
+            html:
+                '<input id="swal-input1" class="swal2-input" placeholder="Subject" value="Re: Your message">' +
+                '<textarea id="swal-input2" class="swal2-textarea" placeholder="Type your reply here..." style="height: 150px;"></textarea>',
+            focusConfirm: false,
+            showCancelButton: true,
+            confirmButtonText: 'Send Reply 🚀',
+            preConfirm: () => {
+                return [
+                    document.getElementById('swal-input1').value,
+                    document.getElementById('swal-input2').value
+                ]
+            }
+        });
+
+        if (formValues) {
+            const [subject, replyMessage] = formValues;
+
+            if (!replyMessage) {
+                Swal.fire('Error', 'Message cannot be empty', 'error');
+                return;
+            }
+
+            try {
+                Swal.fire({ title: 'Sending...', didOpen: () => Swal.showLoading() });
+
+                await axios.post(`${API_URL}/api/contact/reply/${message._id}`, {
+                    subject,
+                    message: replyMessage
+                });
+
+                Swal.fire('Sent!', 'Reply sent successfully', 'success');
+
+                // Update local state
+                setMessages(messages.map(msg =>
+                    msg._id === message._id ? { ...msg, replied: true } : msg
+                ));
+
+            } catch (error) {
+                console.error("Reply failed:", error);
+                Swal.fire('Error', 'Failed to send reply. Check server logs.', 'error');
+            }
         }
     };
 
@@ -71,6 +119,13 @@ const Messages = () => {
                                         {msg.message}
                                     </p>
                                 </div>
+                                <button
+                                    onClick={() => handleReply(msg)}
+                                    className="absolute top-4 right-14 p-2 text-gray-500 hover:text-blue-400 hover:bg-blue-400/10 rounded-lg transition opacity-0 group-hover:opacity-100"
+                                    title="Reply to Message"
+                                >
+                                    <FaReply />
+                                </button>
                                 <button
                                     onClick={() => handleDelete(msg._id)}
                                     className="absolute top-4 right-4 p-2 text-gray-500 hover:text-red-500 hover:bg-red-500/10 rounded-lg transition opacity-0 group-hover:opacity-100"
