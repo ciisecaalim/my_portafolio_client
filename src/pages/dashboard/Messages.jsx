@@ -78,9 +78,13 @@ const Messages = () => {
                                 >
                                     <FaTrash />
                                 </button>
-                                {msg.replied && (
-                                    <div className="absolute bottom-4 right-4 text-xs text-green-400 font-medium flex items-center gap-1">
+                                {msg.replied ? (
+                                    <div className="absolute bottom-4 right-4 text-xs text-green-400 font-bold flex items-center gap-1 bg-green-400/10 px-2 py-1 rounded-md border border-green-400/20">
                                         ✓ Auto-Replied
+                                    </div>
+                                ) : (
+                                    <div className="absolute bottom-4 right-4 text-xs text-yellow-500 font-bold flex items-center gap-1 bg-yellow-500/10 px-2 py-1 rounded-md border border-yellow-500/20">
+                                        ⚠ No Reply Sent
                                     </div>
                                 )}
                             </div>
