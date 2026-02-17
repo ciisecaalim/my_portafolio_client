@@ -76,7 +76,8 @@ const Messages = () => {
 
             } catch (error) {
                 console.error("Reply failed:", error);
-                Swal.fire('Error', 'Failed to send reply. Check server logs.', 'error');
+                const errorMessage = error.response?.data?.message || 'Failed to send reply. Check server logs.';
+                Swal.fire('Error', errorMessage, 'error');
             }
         }
     };
