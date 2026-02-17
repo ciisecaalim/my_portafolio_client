@@ -51,7 +51,6 @@ const Contact = () => {
         const { name, value } = e.target;
 
         if (name === 'name') {
-            // Remove numbers & special characters automatically
             const onlyLetters = value.replace(/[^A-Za-z\s]/g, '');
             setFormData({
                 ...formData,
@@ -64,7 +63,6 @@ const Contact = () => {
             });
         }
 
-        // Clear error while typing
         setErrors({
             ...errors,
             [name]: ''
@@ -84,33 +82,29 @@ const Contact = () => {
         try {
             setLoading(true);
 
-            await axios.post(
-                `${API_URL}/api/contact`,
-                formData
-            );
+            await axios.post(`${API_URL}/api/contact`, formData);
 
+            // ✅ Toast Success Alert
             Swal.fire({
-                title: 'Success!',
-                text: 'Message Sent Successfully ✅',
+                position: 'top-end',
                 icon: 'success',
-                confirmButtonColor: '#9333ea',
+                title: 'Message Sent Successfully ✅',
+                showConfirmButton: false,
                 timer: 2000,
-                showConfirmButton: false
+                toast: true
             });
 
-            setFormData({
-                name: '',
-                email: '',
-                message: ''
-            });
-
+            setFormData({ name: '', email: '', message: '' });
             setErrors({});
         } catch (err) {
+            // ✅ Toast Error Alert
             Swal.fire({
-                title: 'Error!',
-                text: 'Failed to send message ❌',
+                position: 'top-end',
                 icon: 'error',
-                confirmButtonColor: '#ef4444'
+                title: 'Failed to send message ❌',
+                showConfirmButton: false,
+                timer: 3000,
+                toast: true
             });
         } finally {
             setLoading(false);
