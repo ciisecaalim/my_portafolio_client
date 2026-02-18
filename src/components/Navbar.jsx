@@ -69,9 +69,9 @@ const Navbar = () => {
                         animate={{ x: 0 }}
                         exit={{ x: '100%' }}
                         transition={{ type: 'spring', stiffness: 100 }}
-                        className='flex flex-col justify-center items-center absolute top-0 right-0 w-full h-screen glass bg-black/90 md:hidden backdrop-blur-xl'
+                        className='flex flex-col justify-center items-center absolute top-0 right-0 w-full h-screen bg-black/95 z-50 md:hidden'
                     >
-                            {links.map(({ id, link, label }) => (
+                        {links.map(({ id, link, label }) => (
                             <li key={id} className='px-4 cursor-pointer capitalize py-6 text-4xl text-gray-300 hover:text-white hover:scale-110 transition-transform'>
                                 <Link onClick={() => setNav(false)} to={link} smooth={true} duration={500}>
                                     {label}

@@ -79,36 +79,46 @@ const Contact = () => {
             return;
         }
 
-        try {
-            setLoading(true);
+     try {
+    setLoading(true);
 
-            await axios.post(`${API_URL}/api/contact`, formData);
+    await axios.post(`${API_URL}/api/contact`, formData);
 
-            // ✅ Toast Success Alert
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Message Sent Successfully ✅',
-                showConfirmButton: false,
-                timer: 2000,
-                toast: true
-            });
-
-            setFormData({ name: '', email: '', message: '' });
-            setErrors({});
-        } catch (err) {
-            // ✅ Toast Error Alert
-            Swal.fire({
-                position: 'top-end',
-                icon: 'error',
-                title: 'Failed to send message ❌',
-                showConfirmButton: false,
-                timer: 3000,
-                toast: true
-            });
-        } finally {
-            setLoading(false);
+    // ✅ SUCCESS ALERT (Big + Center)
+    Swal.fire({
+        icon: 'success',
+        title: 'Message Sent Successfully!',
+        text: 'Thank you for contacting me.',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#9333ea',
+        width: '500px', // 🔥 Big size
+        padding: '2em',
+        background: '#1e1e2f',
+        color: '#fff',
+        backdrop: `
+            rgba(0,0,0,0.8)
+        `,
+        showClass: {
+            popup: 'animate__animated animate__zoomIn'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__zoomOut'
         }
+    });
+
+    setFormData({ name: '', email: '', message: '' });
+    setErrors({});
+} catch (err) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+        confirmButtonColor: '#9333ea'
+    });
+} finally {
+    setLoading(false);
+}
+
     };
 
     return (
