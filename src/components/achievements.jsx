@@ -80,7 +80,7 @@ const Achievements = () => {
                   <div className="bg-white/10 p-3 rounded-full backdrop-blur-md border border-white/20 text-white">
                     <FaEye className="text-xl" />
                   </div>
-                  <span className="text-white font-medium tracking-wide text-sm uppercase">View Full Image</span>
+                 
                 </div>
               </div>
             </div>
